@@ -19,7 +19,7 @@ IDE
 
 快捷键是开发中必不可少的，当你善于使用快捷键的时候，十指在键盘上飞舞，那画面太美，我不敢想象。
 
-    [常用快捷键操作](http://www.cocoachina.com/ios/20141224/10752.html)
+    [常用快捷键](http://www.cocoachina.com/ios/20141224/10752.html)
 
 2.常用代码片段
 
@@ -33,7 +33,7 @@ IDE
 
 我想插件是Xcode必不可少的把
 
-    [那些不能错过的Xcode插件](http://www.cocoachina.com/industry/20130918/7022.html)
+    [##那些不能错过的Xcode插件##](http://www.cocoachina.com/industry/20130918/7022.html)
 
 除此之外，我自己还经常用到的插件有：
 
