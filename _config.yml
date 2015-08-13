@@ -39,10 +39,10 @@ timezone:      null
 
 
 #Site config
-title: 9leg
-description: java技术文章
-keywords: Java
-url: http://9leg.com
+title: Nalevy
+description: 我的iOS之旅
+keywords: iOS
+url: http://navy1994.github.io
 feed: /atom.xml
 favicon: /images/shortcut.jpg
 
@@ -61,14 +61,12 @@ nav:
 
 #Author config
 author:
-    name: zhujiajun
-    email: leoneyes2012@gmail.com
+    name: HaijunLi
+    email: lihaijun1994@gmail.com
     imageLink: /images/header.jpg
-    simpleIntro: 贵在坚持 让梦想照进现实
+    simpleIntro: 做好技术，做好自己
     detailIntro:
-      <p>使用过很多方式写博客，都没有坚持下来，不是样式难看，就是没有我需要的功能或者太多的功能(其实就是我懒的写吧)。
-      用blogjava记录过一段时间，然后看阿里云怎么火，还半年免费，就弄了台云主机搭建搞了一阵子。
-      这域名9leg就是那段时间申请的......废话不多说了，以后想到什么再更新吧。</p>
+      <p>以前都是用CSDN写博客，最近想自己搞一个博客空间，便开始了使用github，希望袭击能够坚持</p>
       <p>关键在于持之以恒的学习，写文章，那怕是转载过来的，按照自己理解的意思再敲一遍，都比通读一遍印象更深刻。</p>
       <p>在这里与大家共勉，一起成长。</p>
 
@@ -90,13 +88,21 @@ follow:
 #Links
 customLinks:
   - item:
-    - text: 技术小黑屋
-      url: http://droidyue.com/
+    - text: 李海军的专栏
+      url: http://blog.csdn.net/u010710758
     - text: Jekyll
       url: http://jekyllrb.com
-    - text: Jekyll Theme
+    - text: Jekyll主题
+      url: http://jekyllthemes.org
+    - text: 技术支持
       url: http://www.zhanxin.info/themes.html
-    message: Friends    
+    message: Friends
+  - item:
+    - text: CocoaChina
+      url: http://www.cocoachina.com
+    - text: Code4App
+      url: http://www.code4app.com
+    message: About iOS
   - item:
     - text: Java Code Geeks
       url: http://www.javacodegeeks.com/
