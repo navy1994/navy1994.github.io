@@ -178,3 +178,5 @@ language:Objective-C stars:>900
 另外Github Advanced Search 可以用来寻找小伙伴哦—— [Github Advanced Search猎头大法](http://wangchao.de/github-advanced-search%E7%8C%8E%E5%A4%B4%E5%A4%A7%E6%B3%95/).
 
 未完待续…
+
+原创文章转载请注明出处: [提高iOS开发效率的方法和工具](http://navy1994.github.io/ios/2015/08/13/Efficient-tool-in-ios.html)
