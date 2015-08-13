@@ -25,7 +25,7 @@ IDE
 
 开发中有一些常用的代码，可以放到代码片段中，然后下次你就可以使用快捷方法来使用这些代码了，给大家看下我的Xcode中部分代码片段:
 
-blob.png
+
 
     偷懒小技巧
 
@@ -53,13 +53,6 @@ blob.png
 
 但是后来觉得这种注释会有这样一个问题：一个注释多三行
 
-1
-
-2
-
-3
-
-4
 	
 
 /**
@@ -74,10 +67,7 @@ blob.png
 
 后来换成这样：
 
-1
 
-2
-	
 
 /**顶部公告btn */
 
@@ -85,7 +75,7 @@ blob.png
 
 还是多一行，再后来换成这样：
 
-1
+
 	
 
 @property (nonatomic, strong) UIButton *topAnnouncementBtn; // 顶部公告btn
@@ -94,12 +84,11 @@ blob.png
 
 之后某天在微博上看到 芳仔小脚印 的博客 我是如何收拾代码的 中介绍她是这样注释属性的：
 
-1
+
 	
 
 UIButton *btnSend;/**< 发送按钮 */
 
-blob.png
 
 试用了一下，很方便。之后一直用这种方法做属性注释，在这里分享给大家。
 
@@ -111,11 +100,10 @@ blob.png
 
 少年，你还在写方法调试接口吗？如果是，那你一定需要下面这2个了哈:
 
-blob.png
+
 
 DHC 在线调试接口，支持HTTP和HTTPS呦。
 
-blob.png
 
 Postman 一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。(感谢叶孤城___提醒)
 
@@ -123,11 +111,9 @@ Postman 一款功能强大的网页调试与发送网页HTTP请求的Chrome插�
 
 废话不多说，直接上图：
 
-blob.png
 
     JSON Editor Online
 
-blob.png
 
 JSON格式化工具 (感谢iOS程序犭袁 提供)
 
@@ -139,13 +125,13 @@ UI相关
 
 遇到有像素眼的设计师，想哭的心情总是有。但是他们可能有时候会忘记标X、Y，或者就是宽高，下面是我司UI给的一张图：
 
-blob.png
+
 
 魂淡，说好的X，Y呢？
 
 然后我最开始是这样做的
 
-blob.png
+
 
 可是总会有辣么一点误差，而且费眼。。。后来我偶然听一个产品朋友说他们在用马克鳗标图，它有免费和收费2个版本，免费版本可以使用基本功能，感觉还不错。
 
@@ -163,7 +149,7 @@ tinypng批量压缩图片脚本 配套使用更佳。(感谢newbee_nAn 提供)
 
 AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以用Prepo生成
 
-blob.png
+
 
 两地办公
 
@@ -182,13 +168,10 @@ Github上好的开源项目太多，一个一个的star，太慢了，怎么破�
 
 language:Objective-C stars:>900
 
-blob.png
 
 这个其实就是Github的Advanced search功能：
 
-blob.png
 
-blob.png
 
 小伙伴们切记啊，star后并不代表你就掌握了，只有真正深入了解后才是自己的。
 
