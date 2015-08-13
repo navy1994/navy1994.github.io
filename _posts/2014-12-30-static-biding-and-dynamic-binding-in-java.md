@@ -1,298 +1,197 @@
 ---
 layout: post
-title:  Java中的静态绑定和动态绑定
-date:   2014-12-30 12:55:11
-category: "java"
+title:  提高iOS开发效率的方法和工具 
+date:   2015-8-13 13:22:11
+category: "iOS"
 ---
 
 
 
-一个Java程序的执行要经过编译和执行（解释）这两个步骤，同时Java又是面向对象的编程语言。当子类和父类存在同一个方法，子类重写了父类的方法，程序在运行时调用方法是调用父类的方法还是子类的重写方法呢，这应该是我们在初学Java时遇到的问题。这里首先我们将确定这种调用何种方法实现或者变量的操作叫做绑定。
+ 介绍
 
-在Java中存在两种绑定方式，一种为静态绑定，又称作早期绑定。另一种就是动态绑定，亦称为后期绑定。
+这篇文章主要是介绍一下我在iOS开发中使用到的一些可以提升开发效率的方法和工具。
 
-###区别对比
+IDE
 
-* 静态绑定发生在编译时期，动态绑定发生在运行时
-*  使用private或static或final修饰的变量或者方法，使用静态绑定。而虚方法（可以被子类重写的方法）则会根据运行时的对象进行动态绑定。
-* 静态绑定使用类信息来完成，而动态绑定则需要使用对象信息来完成。
-* 重载(Overload)的方法使用静态绑定完成，而重写(Override)的方法则使用动态绑定完成。
+首先要说的肯定是IDE了，说到IDE，Xcode不能跑，当然你也可能同时在使用AppCode等其他的IDE，在这里我主要介绍Xcode中提升开发效率的方法。
 
-###重载方法的示例
+1.善用快捷键
 
-这里展示一个重载方法的示例。
+快捷键是开发中必不可少的，当你善于使用快捷键的时候，十指在键盘上飞舞，那画面太美，我不敢想象。
 
-{% highlight java %} 
-public class TestMain {
-  public static void main(String[] args) {
-      String str = new String();
-      Caller caller = new Caller();
-      caller.call(str);
-  }
-  static class Caller {
-      public void call(Object obj) {
-          System.out.println("an Object instance in Caller");
-      } 
-      public void call(String str) {
-          System.out.println("a String instance in in Caller");
-      }
-  }
-}
-{% endhighlight %}
+    常用快捷键操作
 
-执行的结果为
-{% highlight java %}
-22:19 $ java TestMain
-a String instance in in Caller
-{% endhighlight %}
-在上面的代码中，call方法存在两个重载的实现，一个是接收Object类型的对象作为参数，另一个则是接收String类型的对象作为参数。str是一个String对象，所有接收String类型参数的call方法会被调用。而这里的绑定就是在编译时期根据参数类型进行的静态绑定。
+2.常用代码片段
 
-###验证
+开发中有一些常用的代码，可以放到代码片段中，然后下次你就可以使用快捷方法来使用这些代码了，给大家看下我的Xcode中部分代码片段:
 
-光看表象无法证明是进行了静态绑定，使用javap发编译一下即可验证。
+blob.png
 
-{% highlight java %}
-22:19 $ javap -c TestMain
-Compiled from "TestMain.java"
-public class TestMain {
-  public TestMain();
-    Code:
-       0: aload_0
-       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-       4: return
+    偷懒小技巧
 
-  public static void main(java.lang.String[]);
-    Code:
-       0: new           #2                  // class java/lang/String
-       3: dup
-       4: invokespecial #3                  // Method java/lang/String."<init>":()V
-       7: astore_1
-       8: new           #4                  // class TestMain$Caller
-      11: dup
-      12: invokespecial #5                  // Method TestMain$Caller."<init>":()V
-      15: astore_2
-      16: aload_2
-      17: aload_1
-      18: invokevirtual #6                  // Method TestMain$Caller.call:(Ljava/lang/String;)V
-      21: return
-}
-{% endhighlight %}
-看到了这一行18: invokevirtual #6 // Method TestMain$Caller.call:(Ljava/lang/String;)V 确实是发生了静态绑定，确定了调用了接收String对象作为参数的caller方法。
+3.Xcode插件
 
-重写方法的示例
+我想插件是Xcode必不可少的把
 
-{% highlight java %}
-public class TestMain {
-  public static void main(String[] args) {
-      String str = new String();
-      Caller caller = new SubCaller();
-      caller.call(str);
-  }
-  
-  static class Caller {
-      public void call(String str) {
-          System.out.println("a String instance in Caller");
-      }
-  }
-  
-  static class SubCaller extends Caller {
-      @Override
-      public void call(String str) {
-          System.out.println("a String instance in SubCaller");
-      }
-  }
-}
-{% endhighlight %}
-执行的结果为
+    那些不能错过的Xcode插件
 
-{% highlight java %}
-22:27 $ java TestMain
-a String instance in SubCaller
-{% endhighlight %}
-上面的代码，Caller中有一个call方法的实现，SubCaller继承Caller，并且重写了call方法的实现。我们声明了一个Caller类型的变量callerSub，但是这个变量指向的时一个SubCaller的对象。根据结果可以看出，其调用了SubCaller的call方法实现，而非Caller的call方法。这一结果的产生的原因是因为在运行时发生了动态绑定，在绑定过程中需要确定调用哪个版本的call方法实现。
+除此之外，我自己还经常用到的插件有：
 
-###验证
+1.快速Add #import
 
-使用javap不能直接验证动态绑定，然后如果证明没有进行静态绑定，那么就说明进行了动态绑定。
+2.查看项目的’TODO’,’FIXME’等
 
-{% highlight java %}
-22:27 $ javap -c TestMain
-Compiled from "TestMain.java"
-public class TestMain {
-  public TestMain();
-    Code:
-       0: aload_0
-       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-       4: return
+在此强烈推荐给大家。
 
-  public static void main(java.lang.String[]);
-    Code:
-       0: new           #2                  // class java/lang/String
-       3: dup
-       4: invokespecial #3                  // Method java/lang/String."<init>":()V
-       7: astore_1
-       8: new           #4                  // class TestMain$SubCaller
-      11: dup
-      12: invokespecial #5                  // Method TestMain$SubCaller."<init>":()V
-      15: astore_2
-      16: aload_2
-      17: aload_1
-      18: invokevirtual #6                  // Method TestMain$Caller.call:(Ljava/lang/String;)V
-      21: return
-}
-{% endhighlight %}
+你可能想，如果没有我要用的插件怎么办？少年，这个时候就要自己动手丰衣足食了,我想你可以看看这个Xcode6插件开发入门。
 
-正如上面的结果，18: invokevirtual #6 // Method TestMain$Caller.call:(Ljava/lang/String;)V这里是TestMain$Caller.call而非TestMain$SubCaller.call，因为编译期无法确定调用子类还是父类的实现，所以只能丢给运行时的动态绑定来处理。
+4.注释
 
-###当重载遇上重写
+注释的作用就不多说了，而且现在公司都要求代码必须有注释。
 
-下面的例子有点变态哈，Caller类中存在call方法的两种重载，更复杂的是SubCaller集成Caller并且重写了这两个方法。其实这种情况是上面两种情况的复合情况。
+之前一直在用 喵神onevcat 开源的 VVDocumenter-Xcode.
 
-下面的代码首先会发生静态绑定，确定调用参数为String对象的call方法，然后在运行时进行动态绑定确定执行子类还是父类的call实现。
+但是后来觉得这种注释会有这样一个问题：一个注释多三行
 
-{% highlight java %}
-public class TestMain {
-  public static void main(String[] args) {
-      String str = new String();
-      Caller callerSub = new SubCaller();
-      callerSub.call(str);
-  }
-  
-  static class Caller {
-      public void call(Object obj) {
-          System.out.println("an Object instance in Caller");
-      }
-      
-      public void call(String str) {
-          System.out.println("a String instance in in Caller");
-      }
-  }
-  
-  static class SubCaller extends Caller {
-      @Override
-      public void call(Object obj) {
-          System.out.println("an Object instance in SubCaller");
-      }
-      
-      @Override
-      public void call(String str) {
-          System.out.println("a String instance in in SubCaller");
-      }
-  }
-}
-{% endhighlight %}
-执行结果为
+1
 
-{% highlight java %}
-22:30 $ java TestMain
-a String instance in in SubCaller
-{% endhighlight %}
-###验证
+2
 
-由于上面已经介绍，这里只贴一下反编译结果啦
+3
 
-{% highlight java %}
-22:30 $ javap -c TestMain
-Compiled from "TestMain.java"
-public class TestMain {
-  public TestMain();
-    Code:
-       0: aload_0
-       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-       4: return
+4
+	
 
-  public static void main(java.lang.String[]);
-    Code:
-       0: new           #2                  // class java/lang/String
-       3: dup
-       4: invokespecial #3                  // Method java/lang/String."<init>":()V
-       7: astore_1
-       8: new           #4                  // class TestMain$SubCaller
-      11: dup
-      12: invokespecial #5                  // Method TestMain$SubCaller."<init>":()V
-      15: astore_2
-      16: aload_2
-      17: aload_1
-      18: invokevirtual #6                  // Method TestMain$Caller.call:(Ljava/lang/String;)V
-      21: return
-}
-{% endhighlight %}
-好奇问题
+/**
 
-非动态绑定不可么？
+ *  顶部公告btn
 
-其实理论上，某些方法的绑定也可以由静态绑定实现。比如
-{% highlight java %}
-public static void main(String[] args) {
-      String str = new String();
-      final Caller callerSub = new SubCaller();
-      callerSub.call(str);
-}
-{% endhighlight %}
-比如这里callerSub持有subCaller的对象并且callerSub变量为final，立即执行了call方法，编译器理论上通过足够的分析代码，是可以知道应该调用SubCaller的call方法。
+ */
 
-但是为什么没有进行静态绑定呢？
-假设我们的Caller继承自某一个框架的BaseCaller类，其实现了call方法，而BaseCaller继承自SuperCaller。SuperCaller中对call方法也进行了实现。
+@property (nonatomic, strong) UIButton *topAnnouncementBtn;
 
-假设某框架1.0中的BaseCaller和SuperCaller
+接口用这种方法会简单明了，但是属性的话，总感觉.h文件好多东西（其实没几个属性啊??????）
 
-{% highlight java %}
-static class SuperCaller {
-  public void call(Object obj) {
-      System.out.println("an Object instance in SuperCaller");
-  }
-}
-  
-static class BaseCaller extends SuperCaller {
-  public void call(Object obj) {
-      System.out.println("an Object instance in BaseCaller");
-  }
-}
-{% endhighlight %}
-而我们使用框架1.0进行了这样的实现。Caller继承自BaseCaller，并且调用了super.call方法。
+后来换成这样：
 
-{% highlight java %}
-public class TestMain {
-  public static void main(String[] args) {
-      Object obj = new Object();
-      SuperCaller callerSub = new SubCaller();
-      callerSub.call(obj);
-  }
-  
-  static class Caller extends BaseCaller{
-      public void call(Object obj) {
-          System.out.println("an Object instance in Caller");
-          super.call(obj);
-      }
-      
-      public void call(String str) {
-          System.out.println("a String instance in in Caller");
-      }
-  }
-  
-  static class SubCaller extends Caller {
-      @Override
-      public void call(Object obj) {
-          System.out.println("an Object instance in SubCaller");
-      }
-      
-      @Override
-      public void call(String str) {
-          System.out.println("a String instance in in SubCaller");
-      }
-  }
-}
-{% endhighlight %}
-然后我们基于这个框架的1.0版编译出来了class文件，假设静态绑定可以确定上面Caller的super.call为BaseCaller.call实现。
+1
 
-然后我们再次假设这个框架1.1版本中BaseCaller不重写SuperCaller的call方法，那么上面的假设可以静态绑定的call实现在1.1版本就会出现问题，因为在1.1版本上super.call应该是使用SuperCall的call方法实现，而非假设使用静态绑定确定的BaseCaller的call方法实现。
+2
+	
 
-所以，有些实际可以静态绑定的，考虑到安全和一致性，就索性都进行了动态绑定。
+/**顶部公告btn */
 
-得到的优化启示？
+@property (nonatomic, strong) UIButton *topAnnouncementBtn;
 
-由于动态绑定需要在运行时确定执行哪个版本的方法实现或者变量，比起静态绑定起来要耗时。
+还是多一行，再后来换成这样：
 
-**所以在不影响整体设计，我们可以考虑将方法或者变量使用private，static或者final进行修饰。**
+1
+	
 
-[转载](http://droidyue.com/blog/2014/12/28/static-biding-and-dynamic-binding-in-java/){:target="_blank"}
+@property (nonatomic, strong) UIButton *topAnnouncementBtn; // 顶部公告btn
+
+但是这种方式，在你使用这个属性的时候，是不会有注释提示的。没有就没有把，遇见不明大意的属性，到时候再跳到.h 文件 看一眼。(“呸，你怎么这么容易就妥协了！！！”，我当时应该在心里暗暗骂自己的）
+
+之后某天在微博上看到 芳仔小脚印 的博客 我是如何收拾代码的 中介绍她是这样注释属性的：
+
+1
+	
+
+UIButton *btnSend;/**< 发送按钮 */
+
+blob.png
+
+试用了一下，很方便。之后一直用这种方法做属性注释，在这里分享给大家。
+
+感谢 芳仔小脚印 的分享。
+
+网络数据相关
+
+1.调试接口
+
+少年，你还在写方法调试接口吗？如果是，那你一定需要下面这2个了哈:
+
+blob.png
+
+DHC 在线调试接口，支持HTTP和HTTPS呦。
+
+blob.png
+
+Postman 一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。(感谢叶孤城___提醒)
+
+2.JSON数据编辑
+
+废话不多说，直接上图：
+
+blob.png
+
+    JSON Editor Online
+
+blob.png
+
+JSON格式化工具 (感谢iOS程序犭袁 提供)
+
+UI相关
+
+1.距离
+
+不行！说的是20px！差1px，2px，5px，10px，都不算20px！
+
+遇到有像素眼的设计师，想哭的心情总是有。但是他们可能有时候会忘记标X、Y，或者就是宽高，下面是我司UI给的一张图：
+
+blob.png
+
+魂淡，说好的X，Y呢？
+
+然后我最开始是这样做的
+
+blob.png
+
+可是总会有辣么一点误差，而且费眼。。。后来我偶然听一个产品朋友说他们在用马克鳗标图，它有免费和收费2个版本，免费版本可以使用基本功能，感觉还不错。
+
+今天喵神onevcat在微博发了一个测量的工具：Pixel Winch ,试了一下，比马克鳗好使。
+
+2.图片压缩
+
+我们UI就不太注重图片的大小，尼玛，有一次给的图片有4M多，害我自己还得压缩一遍
+
+tinypng，保质压缩，我感觉还不错，推荐给我们UI和后台，他们用过之后都说好
+
+tinypng批量压缩图片脚本 配套使用更佳。(感谢newbee_nAn 提供)
+
+3.AppIcon
+
+AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以用Prepo生成
+
+blob.png
+
+两地办公
+
+假设这么一种情况：公司用的是SVN，公司一台公司电脑，家里一台自己电脑，有时候可能想回来后接着敲代码，怎么办？
+
+再假设这么一种情况：公司用的是SVN，产品想实现一种效果，但是你又不确定能不能写出来，所以你可能会纠结要不要在公司项目上改动，怎么办？
+
+如果有上述两种烦恼，那么Github 和 Bitbucket 是您的首选，具体选哪个，这里有一篇对比文章:GitHub vs. Bitbucket 不只是功能不同.
+
+Github
+
+Github上好的开源项目太多，一个一个的star，太慢了，怎么破？
+
+1
+	
+
+language:Objective-C stars:>900
+
+blob.png
+
+这个其实就是Github的Advanced search功能：
+
+blob.png
+
+blob.png
+
+小伙伴们切记啊，star后并不代表你就掌握了，只有真正深入了解后才是自己的。
+
+另外Github Advanced Search 可以用来寻找小伙伴哦—— Github Advanced Search猎头大法.
+
+未完待续…
