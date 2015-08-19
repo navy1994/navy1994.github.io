@@ -2,7 +2,11 @@
 layout: post
 title: 优化Jekyll博客访问慢的问题
 date: 2015-01-15 12:32:10
+<<<<<<< HEAD
 category: "Jekyll博客"
+=======
+category: "jekyll博客"
+>>>>>>> 29a88dfc364619511f5dfe19c7022dd9b3110d46
 ---
 
 博客运行一个多月了，各方面都很满意。唯独国内访问网站速度很慢。
