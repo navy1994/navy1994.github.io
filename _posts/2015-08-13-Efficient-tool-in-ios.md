@@ -18,22 +18,33 @@ IDE
 1.善用快捷键
 
 快捷键是开发中必不可少的，当你善于使用快捷键的时候，十指在键盘上飞舞，那画面太美，我不敢想象。
+<<<<<<< HEAD
 
     [常用快捷键](http://www.cocoachina.com/ios/20141224/10752.html)
+=======
+  
+    [常用快捷键操作](http://www.cocoachina.com/ios/20141224/10752.html)
+>>>>>>> 7b72e785aec4d2b6d4130d769c2357b0bbdfa4fc
 
 2.常用代码片段
 
 开发中有一些常用的代码，可以放到代码片段中，然后下次你就可以使用快捷方法来使用这些代码了，给大家看下我的Xcode中部分代码片段:
 
 
-
-    [偷懒小技巧](http://www.2cto.com/kf/201409/336245.html)
+   [偷懒小技巧](http://www.2cto.com/kf/201409/336245.html)
+   
 
 3.Xcode插件
 
 我想插件是Xcode必不可少的把
+<<<<<<< HEAD
 
     [##那些不能错过的Xcode插件##](http://www.cocoachina.com/industry/20130918/7022.html)
+=======
+   
+    [那些不能错过的Xcode插件](http://www.cocoachina.com/industry/20130918/7022.html)
+>>>>>>> 7b72e785aec4d2b6d4130d769c2357b0bbdfa4fc
+
 
 除此之外，我自己还经常用到的插件有：
 
@@ -133,21 +144,21 @@ UI相关
 
 
 
-可是总会有辣么一点误差，而且费眼。。。后来我偶然听一个产品朋友说他们在用马克鳗标图，它有免费和收费2个版本，免费版本可以使用基本功能，感觉还不错。
+可是总会有辣么一点误差，而且费眼。。。后来我偶然听一个产品朋友说他们在用[马克鳗](http://www.getmarkman.com/)标图，它有免费和收费2个版本，免费版本可以使用基本功能，感觉还不错。
 
-今天喵神onevcat在微博发了一个测量的工具：Pixel Winch ,试了一下，比[马克鳗](http://www.getmarkman.com/)好使。
+今天喵神[onevcat](http://weibo.com/onevcat?from=myfollow_all)在微博发了一个测量的工具：[Pixel Winch](http://www.ricciadams.com/projects/pixel-winch) ,试了一下，比[马克鳗](http://www.getmarkman.com/)好使。
 
 2.图片压缩
 
 我们UI就不太注重图片的大小，尼玛，有一次给的图片有4M多，害我自己还得压缩一遍
 
-tinypng，保质压缩，我感觉还不错，推荐给我们UI和后台，他们用过之后都说好
+[tinypng](https://tinypng.com/)，保质压缩，我感觉还不错，推荐给我们UI和后台，他们用过之后都说好
 
-tinypng批量压缩图片脚本 配套使用更佳。(感谢newbee_nAn 提供)
+[tinypng批量压缩图片脚本](https://github.com/ylovern/GGTinypng) 配套使用更佳。(感谢[newbee_nAn](http://weibo.com/gunnergao) 提供)
 
 3.AppIcon
 
-AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以用Prepo生成
+AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以用[Prepo](https://itunes.apple.com/tw/app/prepo/id476533227?mt=12)生成
 
 
 
@@ -157,7 +168,7 @@ AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以�
 
 再假设这么一种情况：公司用的是SVN，产品想实现一种效果，但是你又不确定能不能写出来，所以你可能会纠结要不要在公司项目上改动，怎么办？
 
-如果有上述两种烦恼，那么Github 和 Bitbucket 是您的首选，具体选哪个，这里有一篇对比文章:GitHub vs. Bitbucket 不只是功能不同.
+如果有上述两种烦恼，那么Github 和 Bitbucket 是您的首选，具体选哪个，这里有一篇对比文章:[GitHub vs. Bitbucket 不只是功能不同](http://www.oschina.net/translate/bitbucket-vs-github-its-more-than-just-features).
 
 Github
 
@@ -175,6 +186,8 @@ language:Objective-C stars:>900
 
 小伙伴们切记啊，star后并不代表你就掌握了，只有真正深入了解后才是自己的。
 
-另外Github Advanced Search 可以用来寻找小伙伴哦—— Github Advanced Search猎头大法.
+另外Github Advanced Search 可以用来寻找小伙伴哦—— [Github Advanced Search猎头大法](http://wangchao.de/github-advanced-search%E7%8C%8E%E5%A4%B4%E5%A4%A7%E6%B3%95/).
 
 未完待续…
+
+原创文章转载请注明出处: [提高iOS开发效率的方法和工具](http://navy1994.github.io/ios/2015/08/13/Efficient-tool-in-ios.html)

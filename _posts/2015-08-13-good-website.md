@@ -38,8 +38,9 @@ Swift:
 [APICloud新手教程集合贴](http://community.apicloud.com/bbs/forum.php?mod=viewthread&tid=7926)
 
 
+未完待续.....
 
-原创文章转载请注明出处: [2014年总结](http://www.9leg.com/other/2014/12/31/the-end-2014.html)
+原创文章转载请注明出处: [实用网址大全](http://navy1994.github.io/other/2015/08/13/good-website.html)
 
 
 

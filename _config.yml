@@ -64,7 +64,8 @@ author:
     name: HaijunLi
     email: lihaijun1994@gmail.com
     imageLink: /images/header.jpg
-    simpleIntro: 做好技术，做好自己
+    simpleIntro: <p>Nalevy</p>
+                 <p>做好技术，做好自己</p>
     detailIntro:
       <p>以前都是用CSDN写博客，最近想自己搞一个博客空间，便开始了使用github，希望袭击能够坚持</p>
       <p>关键在于持之以恒的学习，写文章，那怕是转载过来的，按照自己理解的意思再敲一遍，都比通读一遍印象更深刻。</p>
@@ -124,7 +125,7 @@ googleAnaly:
 #baidu tongji
 baiduTongji:
   config: true
-  id: c12b560f0372d5995701449b9eac606c
+  id: 080786460b49497fc0ca9956bb37f2a0
 
 #comment config
 disqus:
@@ -133,7 +134,7 @@ disqus:
 
 duoshuo:
   config: true
-  id: 9leg
+  id: navy1994
 
 #baidu share config
 baiduShare:
