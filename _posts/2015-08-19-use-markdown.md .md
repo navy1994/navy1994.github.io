@@ -2,7 +2,7 @@
 layout: post
 title: 如何编辑一篇博客
 date: 2015-08-19 13:45:12
-category: "other"
+category: "Jekyll博客"
 ---
 
 文章生成在目录下的`source/_posts`目录下。文章是markdown格式的。可以通过[Mou](http://mouapp.com)软件来编辑保存。
