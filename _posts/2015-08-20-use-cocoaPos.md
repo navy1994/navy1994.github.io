@@ -90,6 +90,22 @@ category: "iOS"
 安装CocoaPods
 新建项目并在工程根目录下新建Podfile文件，配置需要管理的第三方库
 运行pod install下载安装第三方库
+
+1、CocoaPods的基本安装及使用都详细的说明了，但还有一些补充，当需要同时导入多个第三方时候怎么办 ？
+这就需要修改Podfile了，就是用vim编辑的那个保存在项目根目录中的文件，修改完了Podfile文件，需要重新执行一次pod install命令。
+例如：
+
+	platform :ios                                                  
+	pod 'JSONKit',       '~> 1.4'
+	pod 'AFNetworking',  '~> 2.0'
+
+2、CocoaPods可以查找你想要的第三方库
+终端输入命令：pod search UI
+疯了了，我怎么查找这么大众的关键字，好多库～～
+
+![image](http://img.blog.csdn.net/20140520184729015?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl6aG9uZ2Z1MjAxMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+
+然后重新编辑Podfile文件，按照之前的步骤，把更多的库都导入项目！
  
 更多内容请参考[CocoaPods Guides](https://guides.cocoapods.org)
 
