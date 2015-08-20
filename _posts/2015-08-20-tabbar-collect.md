@@ -2,10 +2,15 @@
 layout: post
 title: iOS－tabBar汇总
 date: 2015-08-20 10:45:12
-category: "Jekyll博客"
+category: "iOS"
 ---
+<<<<<<< HEAD
 ---
 *  ###[IDScrollableTabBar](https://github.com/valitovaza/scrollableTabbar)
+=======
+
+* ###[IDScrollableTabBar](https://github.com/valitovaza/scrollableTabbar)
+>>>>>>> eea54ce8140830fdd7b3d7f764d7018a9750c64d
 
 ![image](https://camo.githubusercontent.com/e0c10c2cceda7ba593a988d43f6c073e631c816a/68747470733a2f2f7261772e6769746875622e636f6d2f76616c69746f76617a612f7363726f6c6c61626c655461626261722f6d61737465722f49445363726f6c6c61626c655461624261722e706e67)
 ***
