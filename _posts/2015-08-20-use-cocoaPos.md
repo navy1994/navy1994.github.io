@@ -4,7 +4,7 @@ title: iOS－使用CocoaPods管理依赖库
 date: 2015-08-20 13:45:12
 category: "iOS"
 ---
-`CocoaPods`
+
 
 这篇内容将介绍Mac和iOS开发中必备的一个依赖库管理工具[CocoaPods](https://github.com/CocoaPods/CocoaPods)。
  
