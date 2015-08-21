@@ -14,56 +14,60 @@ category: "iOS"
 
 精通 object-c，java， c  等编程语言, 熟悉c++，对于 面向对象编程思想有深入理解，熟悉常见设计模式的应用，
 
-1.objective-c中的数字对象都有哪些，简述它们与基本数据类型的区别是什么
-2.用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数
-3.截取字符串”20｜http://www.621life.com“ 中 ‘｜’字符前面及后面的数据，分别输出它们
-4.objective-c中的词典对象、可变词典对象是哪个，初始化一个含有两个键值对的可变词典对象，并动态的添加和删除一条记录，输出第一条记录
-5.获取项目根路径，并在其下创建一个名称为userData的目录。
-6.在一个对象的方法里面:self.name = “object”;和name ＝”object”有什么不同吗?
-7.定义属性时，什么情况使用copy，assign，和retain
+######1.objective-c中的数字对象都有哪些，简述它们与基本数据类型的区别是什么
+######2.用NSLog函数输出一个浮点类型，结果四舍五入，并保留一位小数
+######3.截取字符串”20｜http://www.621life.com“ 中 ‘｜’字符前面及后面的数据，分别输出它们
+######4.objective-c中的词典对象、可变词典对象是哪个，初始化一个含有两个键值对的可变词典对象，并动态的添加和删除一条记录，输出第一条记录
+######5.获取项目根路径，并在其下创建一个名称为userData的目录。
+######6.在一个对象的方法里面:self.name = “object”;和name ＝”object”有什么不同吗?
+######7.定义属性时，什么情况使用copy，assign，和retain
 
-8.ViewController 的viewDidLoad,viewWillAppear,viewDidUnload,dealloc
-分别是在什么时候调用，在自定义ViewController的时候这几个函数里面应该做什么工作？
+######8.ViewController 的viewDidLoad,viewWillAppear,viewDidUnload,dealloc分别是在什么时候调用，在自定义ViewController的时候这几个函数里面应该做什么工作？
 
-9.简述objective-c内存管理的实现机制，并简述什么时候由你负责释放对象，什么时候不由你释放
-10.类的定义及声明文件以什么为后缀名？
-11.怎样自动生成属性的获取方法和设置方法
-12.声明一个静态方法和一个实例方法
-13.写一个发送同步http请求，并获得返回结果的方法
-14.怎样启动一个新线程，子线程怎样刷新主UI
-15.什么是MVC，你工作时怎样运用它
+######9.简述objective-c内存管理的实现机制，并简述什么时候由你负责释放对象，什么时候不由你释放
+######10.类的定义及声明文件以什么为后缀名？
+######11.怎样自动生成属性的获取方法和设置方法
+######12.声明一个静态方法和一个实例方法
+######13.写一个发送同步http请求，并获得返回结果的方法
+######14.怎样启动一个新线程，子线程怎样刷新主UI
+######15.什么是MVC，你工作时怎样运用它
 
 第3题：
-NSRange range = [responseString rangeOfString:@"|"];
-int location = range.location;
-NSString *str1 = [responseString substringToIndex:location];
-NSString *str2 = [responseString substringFromIndex:location+1];
+
+	NSRange range = [responseString rangeOfString:@"|"];
+	int location = range.location;
+	NSString *str1 = [responseString 	substringToIndex:location];
+	NSString *str2 = [responseString substringFromIndex:location+1];
 
 第4题：
-NSDictionary NSMutableDictionary
-NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"value1",@"key1",@"value2",@"key2",nil];
-[dic setObject:@"value3" forKey:@"key3"];
-[dic removeObjectForKey:@"key3"];
-[dic objectForKey:@"key1"];
+
+	NSDictionary NSMutableDictionary
+	NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"value1",@"key1",@"value2",@"key2",nil];
+	[dic setObject:@"value3" forKey:@"key3"];
+	[dic removeObjectForKey:@"key3"];
+	[dic objectForKey:@"key1"];
 
 第5题：
-// 获取根路径
-NSArray *paths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-NSString *documentsDirectory = [paths objectAtIndex:];
-// 创建文件系统管理器
-NSFileManager *fileManager = [[NSFileManager alloc] init];
-// 判断userData目录是否存在
-if(![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/userData", documentsDirectory]]) {
-// 不存在,创建一个userData目录
-[fileManager createDirectoryAtPath:[NSString stringWithFormat:@"%@/userData", documentsDirectory]withIntermediateDirectories:false attributes:nil error:nil];
-}
+
+	// 获取根路径
+	NSArray *paths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:];
+	// 创建文件系统管理器
+	NSFileManager *fileManager = [[NSFileManager alloc] init];
+	// 判断userData目录是否存在
+	if(![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/userData", documentsDirectory]]) {
+	// 不存在,创建一个userData目录
+	[fileManager createDirectoryAtPath:[NSString stringWithFormat:@"%@/userData", documentsDirectory]withIntermediateDirectories:false attributes:nil error:nil];
+	}
 
 第6题：
-self.name = “object”会调用对象的setName()方法，
-name = “object”会直接把object赋值给当前对象的name 属性。
-并且 self.name 这样retainCount会加１,而name就不会。
+
+	self.name = “object”会调用对象的setName()方法，
+	name = “object”会直接把object赋值给当前对象的name 属性。
+	并且 self.name 这样retainCount会加１,而name就不会。
 
 第7题：
+
 assign用于简单数据类型，如NSInteger,double,bool,retain 和copy用户对象，copy用于当 a指向一个对象，b也想指向同样的对象的时候，如果用assign，a如果释放，再调用b会crash,如果用copy 的方式，a和b各自有自己的内存，就可以解决这个问题。retain 会使计数器加一，也可以解决assign的问题。另外：tomic和nonatomic用来决定编译器生成的getter和setter是否为原子操作。在多线程环境下，原子操作是必要的，否则有可能引起错误的结果。
 
 对于大型项目有一定的架构能力。
@@ -242,7 +246,9 @@ static关键字有两种意思,你看上下文来判断
 不加static的函数默认为是全局的. 
 也就是说在其他的.cpp中只要申明一下这个函数,就可以使用它. 
 
-1、static全局变量与普通的全局变量有什么区别？static局部变量和普通局部变量有什么区别？static函数与普通函数有什么区别？
+1、static全局变量与普通的全局变量有什么区别？
+
+static局部变量和普通局部变量有什么区别？static函数与普通函数有什么区别？
     答：全局变量(外部变量)的说明之前再冠以static 就构成了静态的全局变量。全局变量本身就是静态存储方式， 静态全局变量当然也是静态存储方式。 这两者在存储方式上并无不同。这两者的区别虽在于非静态全局变量的作用域是整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的。 而静态全局变量则限制了其作用域， 即只在定义该变量的源文件内有效， 在同一源程序的其它源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用， 因此可以避免在其它源文件中引起错误。
     从以上分析可以看出， 把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域， 限制了它的使用范围。
     static函数与普通函数作用域不同。static函数仅在本文件中使用。只在当前源文件中使用的函数应该说明为内部函数(static)，内部函数应该在当前源文件中说明和定义。对于可在当前源文件以外使用的函数，应该在一个头文件中说明，要使用这些函数的源文件要包含这个头文件
@@ -316,40 +322,40 @@ least = MIN(*p++, b);
 
 ######4.写一个委托的 interface
 
-@protocol MyDelegate;
+	@protocol MyDelegate;
 
  
-@interface MyClass: NSObject
+	@interface MyClass: NSObject
 
-{
+	{
 
-    id delegate;
+    	id delegate;
 
-}
+	}
 
-// 委托方法
+	// 委托方法
 
-@protocol MyDelegate
+	@protocol MyDelegate
 
-- (void)didJobs:(NSArray *)args;
+	- (void)didJobs:(NSArray *)args;
 
-@end
+	@end
 
  
 
 ######5. 写一个NSString类的实现
 
-+ (id)initWithCString:(const char *)nullTerminatedCString encoding:(NSStringEncoding)encoding;
+	+ (id)initWithCString:(const char *)nullTerminatedCString encoding:(NSStringEncoding)encoding;
 
-+ (id) stringWithCString: (const char*)nullTerminatedCString
+	+ (id) stringWithCString: (const char*)nullTerminatedCString
             encoding: (NSStringEncoding)encoding
-{
-  NSString  *obj;
+	{
+		NSString  *obj;
 
-  obj = [self allocWithZone: NSDefaultMallocZone()];
-  obj = [obj initWithCString: nullTerminatedCString encoding: encoding];
-  return AUTORELEASE(obj);
-}
+		obj = [self allocWithZone: NSDefaultMallocZone()];
+		obj = [obj initWithCString: nullTerminatedCString encoding: encoding];
+		return AUTORELEASE(obj);
+	}
 
 ######6.obj-c有多重继承么?不是的话有什么替代方法?
 
@@ -366,23 +372,23 @@ ood的多态特性  在 obj-c 中通过委托来实现.
 
  objective-c - 类里面的方法只有两种, 静态方法和实例方法. 这似乎就不是完整的面向对象了,按照OO的原则就是一个对象只暴露有用的东西. 如果没有了私有方法的话, 对于一些小范围的代码重用就不那么顺手了. 在类里面声名一个私有方法
 
-@interface Controller : NSObject {
+	@interface Controller : NSObject {
 
-　　 NSString *something;
+		NSString *something;
 
-}
+	}
 
-+ (void)thisIsAStaticMethod;
+	+ (void)thisIsAStaticMethod;
 
-- (void)thisIsAnInstanceMethod;
+	- (void)thisIsAnInstanceMethod;
 
-@end
+	@end
 
-@interface Controller (private)
+	@interface Controller (private)
 
--(void)thisIsAPrivateMethod;
+	-(void)thisIsAPrivateMethod;
 
-@end
+	@end
 
  
 @private可以用来修饰私有变量
@@ -484,16 +490,16 @@ extern 类型。
  
 
 ######10.为什么标准头文件都有类似以下的结构？  
-   #ifndef __INCvxWorksh  
-   #define __INCvxWorksh  
-   #ifdef __cplusplus  
-   extern "C" {  
-   #endif  
+	#ifndef __INCvxWorksh  
+	#define __INCvxWorksh  
+	#ifdef __cplusplus  
+	extern "C" {  
+	#endif  
     
-   #ifdef __cplusplus  
-   }  
-   #endif  
-   #endif
+	#ifdef __cplusplus  
+	}  
+	#endif  
+	#endif
 
 显然，头文件中的编译宏“#ifndef __INCvxWorksh、#define __INCvxWorksh、#endif” 的作用
 是防止该头文件被重复引用。
@@ -1245,7 +1251,9 @@ UIDatePicker   UIPickerView
 ######58.在一个对象的方法里面:
 
 ######self.name = “object”;
+
 ######和
+
 ######name ＝”object”
 
 ######有什么不同吗?  
