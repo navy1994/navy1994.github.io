@@ -1075,6 +1075,80 @@ iphone手机阅读器中对于PDF格式的阅读，可以直接用UIWebView控�
  
  传值：可以用 block  delegate   , NSNotificationCenter  ,很少用NSUserDefaults
  
+1. 利用NSUserDefaults来传值，这种方法只限于传少量数据的情形：
+
+比如你要传一个float的值，在需要传的时候用
+
+	[[NSUserDefaults standardUserDefaults] setFloat:float forKey::@"float"]
+
+接收值的时候用
+
+	[[NSUserDefaults standardUserDefaults] floatForKey:@"float"]
+
+2. NSNotificationCenter来传值
+
+	
+	    - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+
+		{
+
+    		UITouch * touch = [touches anyObject];
+
+    		CGPoint point = [touch locationInView:self];
+
+    		CGRect roundRect = [self rectNeedRefreshFromThisPoint:point];
+
+    		mLastPoint = CGPointMake(-1, -1);
+
+   
+			NSLog(@"%s: point(%f,%f)", __FUNCTION__, point.x, point.y);
+
+   
+
+    		[self addToCurrentLineWithPoint:point.x y:point.y];
+
+    		[self endLine];
+
+    		[self setNeedsDisplayInRect:roundRect];
+
+   
+
+    		NSNumber *pointX = [NSNumber numberWithFloat:point.x];
+
+    		NSNumber *pointY = [NSNumber numberWithFloat:point.y];
+
+    		NSDictionary *pointDict = [NSDictionary dictionaryWithObjectsAndKeys:pointX,@"pointX",pointY,@"pointY", nil];
+
+    		[[NSNotificationCenter defaultCenter]postNotificationName:@"passTouchedEndPointMsg" object:self userInfo:pointDict];
+		}
+
+在消息中心的函数：
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+	                                               selector:@selector(getTouchedPoint:)
+
+                                                     name:@"passTouchedEndPointMsg"
+
+                                                   object:nil];
+
+  
+
+	- (void) getTouchedPoint:(NSNotification *)noti
+
+	{
+
+		NSDictionary *pointDict = [noti userInfo];
+
+    	touchedEndPointX = [[pointDict objectForKey:@"pointX"] floatValue];
+
+    	touchedEndPointY = [[pointDict objectForKey:@"pointY"] floatValue];
+
+    	NSLog(@"%f:%f",touchedEndPointX,touchedEndPointY);
+
+	}
+
+用消息来传参数有下面几点说法：object指的是发送者、在poseter端的userInfo里面可以存放要传的参数，必须为NSDictionary类型。在center端获取这个dictionary类型用:[notification userInfo];来获取
+ 
 
 ######44.让一个物体从界面中的一点运动到另外一点，有哪些方法？
 
