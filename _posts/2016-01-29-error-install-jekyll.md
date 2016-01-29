@@ -1,13 +1,10 @@
 ---
 layout: post
 title: 安装Jekyll博客的问题
-date: 2016-01-29 12:32:10
-<<<<<<< HEAD
+date: 2016-01-29 13:45:12
 category: "Jekyll博客"
-=======
-category: "jekyll博客"
-
 ---
+
 ##错误
     ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
