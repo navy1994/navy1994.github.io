@@ -5,7 +5,7 @@ date: 2016-01-29 13:45:12
 category: "Jekyll博客"
 ---
 
-##错误
+## 错误
     ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
     mac-deiMac:~ mac$ sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard- error-in-future gem install jekyll
@@ -37,13 +37,13 @@ category: "Jekyll博客"
 
 
 
-##解决方法
+## 解决方法
 
-####安装ruby
+#### 安装ruby
 rvm install 2.1.1
 
-####使用ruby-2.1.1
+#### 使用ruby-2.1.1
 rvm use ruby-2.1.1
 
-####安装Jekyll
+#### 安装Jekyll
 sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install jekyll
