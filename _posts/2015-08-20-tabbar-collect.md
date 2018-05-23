@@ -6,9 +6,10 @@ category: "iOS"
 ---
 
 
-* ###[IDScrollableTabBar](https://github.com/valitovaza/scrollableTabbar)
+* [IDScrollableTabBar](https://github.com/valitovaza/scrollableTabbar)
 
 ![image](https://camo.githubusercontent.com/e0c10c2cceda7ba593a988d43f6c073e631c816a/68747470733a2f2f7261772e6769746875622e636f6d2f76616c69746f76617a612f7363726f6c6c61626c655461626261722f6d61737465722f49445363726f6c6c61626c655461624261722e706e67)
+
 
 * ###[TabBarKit](https://github.com/davidmorford/TabBarKit)
 ![image](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Arrow.png)
