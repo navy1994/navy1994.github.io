@@ -7,7 +7,7 @@ category: "iOS"
 
 
 
-##下面的错误
+## 下面的错误
 
 	mac-deiMac:~ mac$ pod search
 		/Library/Ruby/Site/2.0.0/rubygems/dependency.rb:296:in `to_specs': Could not find 	'cocoapods' (>= 0) among 13 total gem(s) (Gem::LoadError)
@@ -21,7 +21,7 @@ category: "iOS"
 	from /usr/bin/pod:22:in `<main>'
 
 
-###解决方案：
+### 解决方案：
 
 1). sudo gem uninstall --all
 
