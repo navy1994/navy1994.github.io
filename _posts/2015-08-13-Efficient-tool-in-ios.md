@@ -7,15 +7,15 @@ category: "iOS"
 
 
 
-##介绍
+## 介绍
 
 这篇文章主要是介绍一下我在iOS开发中使用到的一些可以提升开发效率的方法和工具。
 
-##IDE
+## IDE
 
 首先要说的肯定是IDE了，说到IDE，Xcode不能跑，当然你也可能同时在使用AppCode等其他的IDE，在这里我主要介绍Xcode中提升开发效率的方法。
 
-###1.善用快捷键
+### 1.善用快捷键
 
 快捷键是开发中必不可少的，当你善于使用快捷键的时候，十指在键盘上飞舞，那画面太美，我不敢想象。
 
@@ -23,7 +23,7 @@ category: "iOS"
   
   * [常用快捷键操作](http://www.cocoachina.com/ios/20141224/10752.html)
 
-###2.常用代码片段
+### 2.常用代码片段
 
 开发中有一些常用的代码，可以放到代码片段中，然后下次你就可以使用快捷方法来使用这些代码了，给大家看下我的Xcode中部分代码片段:
 
@@ -33,7 +33,7 @@ category: "iOS"
   * [偷懒小技巧](http://www.2cto.com/kf/201409/336245.html)
    
 
-###3.Xcode插件
+### 3.Xcode插件
 
 我想插件是Xcode必不可少的吧
 
@@ -52,7 +52,7 @@ category: "iOS"
 
 你可能想，如果没有我要用的插件怎么办？少年，这个时候就要自己动手丰衣足食了,我想你可以看看这个[Xcode6插件开发入门](http://zixun.github.io/blog/2015/05/04/xcode6cha-jian-kai-fa-ru-men/)。
 
-###4.注释
+### 4.注释
 
 注释的作用就不多说了，而且现在公司都要求代码必须有注释。
 
@@ -100,9 +100,9 @@ category: "iOS"
 
 感谢 芳仔小脚印 的分享。
 
-##网络数据相关
+## 网络数据相关
 
-###1.调试接口
+### 1.调试接口
 
 少年，你还在写方法调试接口吗？如果是，那你一定需要下面这2个了哈:
 
@@ -114,7 +114,7 @@ category: "iOS"
 
 [Postman](http://chromecj.com/web-development/2014-09/60.html) 一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。(感谢[叶孤城___](http://weibo.com/u/1438670852?from=feed&loc=nickname)提醒)
 
-###2.JSON数据编辑
+### 2.JSON数据编辑
 
 废话不多说，直接上图：
 
@@ -126,9 +126,9 @@ category: "iOS"
 
 * [JSON格式化工具](http://www.runoob.com/tool/json/index.html) (感谢[iOS程序犭袁](http://weibo.com/luohanchenyilong?from=feed&loc=nickname) 提供)
 
-###UI相关
+### UI相关
 
-#####1.距离
+##### 1.距离
 
 不行！说的是20px！差1px，2px，5px，10px，都不算20px！
 
@@ -146,7 +146,7 @@ category: "iOS"
 
 今天喵神[onevcat](http://weibo.com/onevcat?from=myfollow_all)在微博发了一个测量的工具：[Pixel Winch](http://www.ricciadams.com/projects/pixel-winch) ,试了一下，比[马克鳗](http://www.getmarkman.com/)好使。
 
-#####2.图片压缩
+##### 2.图片压缩
 
 我们UI就不太注重图片的大小，尼玛，有一次给的图片有4M多，害我自己还得压缩一遍
 
@@ -154,7 +154,7 @@ category: "iOS"
 
 [tinypng批量压缩图片脚本](https://github.com/ylovern/GGTinypng) 配套使用更佳。(感谢[newbee_nAn](http://weibo.com/gunnergao) 提供)
 
-#####3.AppIcon
+##### 3.AppIcon
 
 AppIcon只需要UI提供一张1024*1024的图就可以了，具体的icon可以用[Prepo](https://itunes.apple.com/tw/app/prepo/id476533227?mt=12)生成
 
