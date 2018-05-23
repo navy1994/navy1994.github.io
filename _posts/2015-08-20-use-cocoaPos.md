@@ -10,7 +10,7 @@ category: "iOS"
  
 在iOS开发中势必会用到一些第三方依赖库，比如大家都熟悉的ASIHttpRequest、AFNetworking、JSONKit等。使用这些第三方类库能极大的方便项目的开发，但是，集成这些依赖库需要我们手动去配置，例如集成ASIHttpRequest库时除了加入源码以外还需要手动去添加一些系统的framework，CFNetwork、MobileCoreServices等，如果这些第三方库发生了更新，还需要手动去更新项目。这就显得非常麻烦。有麻烦自然有解决办法，CocoaPods就是为了解决这个问题而生的。通过CocoaPods，我们可以将第三方的依赖库统一管理起来，配置和更新只需要通过简单的几行命令即可完成，大大的提高了实际开发中的工作效率，使我们的主要精力集中到更重要的事情上去。
  
-##安装CocoaPods
+### 安装CocoaPods
  
 我的环境为`Mac OS X 10.9.1`，安装CocoaPods之前，先确保本地有Ruby环境，因为CocoaPods运行于Ruby之上，默认情况下，Mac是自带了Ruby环境的，可以通过命令行`ruby -v`查看当前Ruby的版本，我用的是1.9.3p448。接下来我们就可以通过如下命令安装CocoaPods了。
 
@@ -33,7 +33,7 @@ category: "iOS"
  
 接下来就可以重新运行安装命令来安装CocoaPods了，根据你的网络情况，几秒或十几秒后安装过程就完成了，总的来说，安装过程还是比较简单的。如果其中你遇到了什么问题，请自行Google解决，都能找到你想要的答案。
  
-##使用CocoaPods
+### 使用CocoaPods
  
 我们通过集成JSONKit类库来演示如何使用CocoaPods来做依赖库管理。首先，建立一个xcode工程，命名为CocoaPodsTest，现在的工程结构如下图所示。
 
@@ -86,7 +86,7 @@ category: "iOS"
 
 如果类库有更新，查看更新配置并执行pod update即可简单完成了，从此从手动更新繁重的体力劳动中解脱出来。
  
-##简单小结一下：
+### 简单小结一下：
 安装CocoaPods
 新建项目并在工程根目录下新建Podfile文件，配置需要管理的第三方库
 运行pod install下载安装第三方库
