@@ -13,5 +13,5 @@ category: "Jekyll博客"
 关于markdown的格式可以参考这篇文章:<http://wowubuntu.com/markdown/>
 
 
-#Markdown
+# Markdown
 ![Mou image](http://25.io/mou/img/1.png)
